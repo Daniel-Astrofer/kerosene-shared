@@ -29,7 +29,7 @@ configurations.configureEach {
 }
 
 dependencies {
-    api(project(":kerosene-contracts"))
+    api("io.kerosene.contracts:kerosene-contracts:0.2.0-SNAPSHOT")
     api("org.springframework:spring-context")
     api("org.springframework:spring-web")
     api("jakarta.persistence:jakarta.persistence-api")
