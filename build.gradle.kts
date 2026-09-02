@@ -32,6 +32,7 @@ dependencies {
     api("io.kerosene.contracts:kerosene-contracts:0.2.0-SNAPSHOT")
     api("org.springframework:spring-context")
     api("org.springframework:spring-web")
+    api("io.spiffe:java-spiffe-provider:0.8.17")
     api("jakarta.persistence:jakarta.persistence-api")
     api("org.slf4j:slf4j-api")
     implementation("com.fasterxml.jackson.core:jackson-annotations")
@@ -40,4 +41,16 @@ dependencies {
         exclude(group = "org.bouncycastle", module = "bcprov-jdk15to18")
     }
     implementation("org.bouncycastle:bcprov-jdk18on:1.84")
+    compileOnly("org.apache.tomcat.embed:tomcat-embed-core:10.1.55")
+    compileOnly("jakarta.servlet:jakarta.servlet-api")
+
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.springframework:spring-test")
+    testImplementation("jakarta.servlet:jakarta.servlet-api")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
